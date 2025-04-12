@@ -1,0 +1,191 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbo7q1xkx1o1t"]
+
+[ext_resource type="Script" uid="uid://dtyllarorsnot" path="res://end_screen.gd" id="1_q4q4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4q4s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqefv"]
+bg_color = Color(0.674815, 0.674815, 0.674815, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_waoj7"]
+bg_color = Color(0.501407, 0.501406, 0.501406, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rf70"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ikch"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnf8l"]
+bg_color = Color(0.674815, 0.674815, 0.674815, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hgxf"]
+bg_color = Color(0.501407, 0.501406, 0.501406, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uf6v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4q4s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 1, 1, 0.67451)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -218.0
+offset_right = 21.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreRow" type="HBoxContainer" parent="Panel/VBoxContainer/Stats"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel/VBoxContainer/Stats/ScoreRow"]
+layout_mode = 2
+text = "Score: "
+
+[node name="ScoreValue" type="Label" parent="Panel/VBoxContainer/Stats/ScoreRow"]
+layout_mode = 2
+
+[node name="KillsRow" type="HBoxContainer" parent="Panel/VBoxContainer/Stats"]
+layout_mode = 2
+
+[node name="KillsLabel" type="Label" parent="Panel/VBoxContainer/Stats/KillsRow"]
+layout_mode = 2
+text = "Guards Killed:"
+
+[node name="KillsValue" type="Label" parent="Panel/VBoxContainer/Stats/KillsRow"]
+layout_mode = 2
+
+[node name="RingsRow" type="HBoxContainer" parent="Panel/VBoxContainer/Stats"]
+layout_mode = 2
+
+[node name="RingsLabel" type="Label" parent="Panel/VBoxContainer/Stats/RingsRow"]
+layout_mode = 2
+text = "Rings Collected:"
+
+[node name="RingsValue" type="Label" parent="Panel/VBoxContainer/Stats/RingsRow"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TotalRow" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TotalLabel" type="Label" parent="Panel/VBoxContainer/TotalRow"]
+layout_mode = 2
+text = "TOTAL SCORE:"
+
+[node name="TotalValue" type="Label" parent="Panel/VBoxContainer/TotalRow"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q4q4s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqefv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_waoj7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1rf70")
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1ikch")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bnf8l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8hgxf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8uf6v")
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

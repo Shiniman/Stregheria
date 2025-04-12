@@ -1,0 +1,391 @@
+[gd_scene load_steps=37 format=3 uid="uid://2qpl7renom6u"]
+
+[ext_resource type="Script" uid="uid://burai0es2b1t8" path="res://Scripts/ui.gd" id="1_mmixe"]
+[ext_resource type="Texture2D" uid="uid://c636jjv5ru2rd" path="res://Textures/UI/Hand Sprite Sheet.png" id="2_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://l6c5xva4rgv1" path="res://Textures/UI/HealthBarOver.png" id="3_g0wmg"]
+[ext_resource type="Texture2D" uid="uid://52cits6np6o1" path="res://Textures/UI/ManaBarOver.png" id="4_4vbiv"]
+[ext_resource type="Texture2D" uid="uid://dde124tg6cseb" path="res://Textures/UI/HealthBarProgress.png" id="4_g0wmg"]
+[ext_resource type="Texture2D" uid="uid://c7bdom3xsyb8k" path="res://Textures/UI/ManaBarProgress.png" id="5_3r70p"]
+[ext_resource type="Texture2D" uid="uid://cpy2uvlrw0f6m" path="res://Textures/UI/BaseRingIcon.png" id="6_8fs27"]
+[ext_resource type="Texture2D" uid="uid://c3mt8ihrjo6te" path="res://Textures/UI/FireRingIcon.png" id="7_whq80"]
+[ext_resource type="Texture2D" uid="uid://bvlrap0vy1w30" path="res://Textures/UI/IceRingIcon.png" id="8_kuui0"]
+[ext_resource type="Texture2D" uid="uid://didu8jmgc0lyx" path="res://Textures/UI/LighteningRingIcon.png" id="9_smy1h"]
+[ext_resource type="Texture2D" uid="uid://d21uxdad5chvi" path="res://Textures/UI/crosshair008.png" id="10_nt8jn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irxef"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(176, 107, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2l4f"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(352, 107, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5rqp"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(528, 107, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs482"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(704, 107, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxd00"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(0, 107, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etlur"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(176, 0, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rqds"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(352, 0, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvb2n"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(528, 0, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os5c7"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(704, 0, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2p7n"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(0, 0, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkygq"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(176, 214, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sosvr"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(352, 214, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndy3v"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(528, 214, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2s2p"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(704, 214, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8jk5"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(0, 214, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cka8k"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(176, 321, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53buu"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(352, 321, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w61g"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(528, 321, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccnxy"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(704, 321, 176, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2460"]
+atlas = ExtResource("2_nt8jn")
+region = Rect2(0, 321, 176, 107)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4yjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irxef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2l4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5rqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs482")
+}],
+"loop": false,
+"name": &"fire_attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxd00")
+}],
+"loop": false,
+"name": &"fire_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etlur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rqds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvb2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os5c7")
+}],
+"loop": false,
+"name": &"hand_attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2p7n")
+}],
+"loop": false,
+"name": &"hand_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkygq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sosvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndy3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2s2p")
+}],
+"loop": false,
+"name": &"ice_attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8jk5")
+}],
+"loop": false,
+"name": &"ice_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cka8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53buu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w61g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccnxy")
+}],
+"loop": false,
+"name": &"lightening_attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2460")
+}],
+"loop": false,
+"name": &"lightening_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ok7cu"]
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_irxef"]
+font_size = 15
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2l4f"]
+font_size = 15
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5rqp"]
+font_size = 15
+font_color = Color(0, 1, 1, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_mmixe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(602, 517)
+scale = Vector2(2.81818, 2.79395)
+sprite_frames = SubResource("SpriteFrames_y4yjw")
+animation = &"hand_attack"
+autoplay = "hand_idle"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margins" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Stats" type="VBoxContainer" parent="Control/Margins"]
+layout_mode = 2
+
+[node name="HealthRow" type="HBoxContainer" parent="Control/Margins/Stats"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="Control/Margins/Stats/HealthRow"]
+layout_mode = 2
+text = "Health:"
+
+[node name="HealthBar" type="TextureProgressBar" parent="Control/Margins/Stats/HealthRow"]
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+texture_over = ExtResource("3_g0wmg")
+texture_progress = ExtResource("4_g0wmg")
+texture_progress_offset = Vector2(33.045, 11.745)
+
+[node name="ManaRow" type="HBoxContainer" parent="Control/Margins/Stats"]
+layout_mode = 2
+
+[node name="ManaLabel" type="Label" parent="Control/Margins/Stats/ManaRow"]
+layout_mode = 2
+text = "Mana:  "
+
+[node name="ManaBar" type="TextureProgressBar" parent="Control/Margins/Stats/ManaRow"]
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+texture_over = ExtResource("4_4vbiv")
+texture_progress = ExtResource("5_3r70p")
+texture_progress_offset = Vector2(33.045, 11.745)
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 390.0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.541176, 0.541176, 0.541176, 0.298039)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control"]
+layout_mode = 1
+offset_right = 43.0
+offset_bottom = 50.0
+
+[node name="ScoreLabel" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Score"
+
+[node name="SCORE" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponIndicator" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = -64.0
+offset_right = 372.0
+grow_vertical = 0
+
+[node name="BaseRingIcon" type="TextureRect" parent="Control/WeaponIndicator"]
+layout_mode = 2
+texture = ExtResource("6_8fs27")
+
+[node name="Mana_Cost" type="Label" parent="Control/WeaponIndicator/BaseRingIcon"]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 64.0
+text = "0"
+label_settings = SubResource("LabelSettings_ok7cu")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="FireRingIcon" type="TextureRect" parent="Control/WeaponIndicator"]
+layout_mode = 2
+texture = ExtResource("7_whq80")
+
+[node name="Mana_Cost" type="Label" parent="Control/WeaponIndicator/FireRingIcon"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 63.0
+text = "10"
+label_settings = SubResource("LabelSettings_irxef")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="IceRingIcon" type="TextureRect" parent="Control/WeaponIndicator"]
+layout_mode = 2
+texture = ExtResource("8_kuui0")
+
+[node name="Mana_Cost" type="Label" parent="Control/WeaponIndicator/IceRingIcon"]
+layout_mode = 0
+offset_right = 71.0
+offset_bottom = 62.0
+text = "15"
+label_settings = SubResource("LabelSettings_e2l4f")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LighteningRingIcon" type="TextureRect" parent="Control/WeaponIndicator"]
+layout_mode = 2
+texture = ExtResource("9_smy1h")
+
+[node name="Mana_Cost" type="Label" parent="Control/WeaponIndicator/LighteningRingIcon"]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 63.0
+text = "25"
+label_settings = SubResource("LabelSettings_n5rqp")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DamageOverlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 1, 0.0392157)
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Crosshair" type="Sprite2D" parent="Control2"]
+texture = ExtResource("10_nt8jn")

@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://d21fpwmodveci"]
+
+[ext_resource type="Script" uid="uid://c2moj1bjhinjh" path="res://Scripts/Collectibles/mana_crystal.gd" id="1_gljsd"]
+[ext_resource type="Texture2D" uid="uid://del3c0se63qry" path="res://Textures/Entity/GEM 1 - DARK BLUE - Spritesheet.png" id="2_dln1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gljsd"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(0, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dln1h"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(18, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_285un"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(36, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qqwn"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(54, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7xr7"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(72, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leham"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(90, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gfhe"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(108, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xilhv"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(126, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88ntx"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(144, 0, 18, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xex34"]
+atlas = ExtResource("2_dln1h")
+region = Rect2(162, 0, 18, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st1lf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gljsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dln1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_285un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qqwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7xr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leham")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xilhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88ntx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xex34")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_285un"]
+radius = 0.6
+height = 1.5
+
+[node name="ManaCrystal" type="Area3D"]
+script = ExtResource("1_gljsd")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.4, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_st1lf")
+frame_progress = 0.294998
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.4, 0)
+visible = false
+billboard = 2
+texture = ExtResource("2_dln1h")
+hframes = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_285un")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

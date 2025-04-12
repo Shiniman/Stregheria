@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://d3fgxh0macqoy"]
+
+[ext_resource type="Script" uid="uid://cabfyprod2iee" path="res://Scripts/Collectibles/health_crystal.gd" id="1_3dd7l"]
+[ext_resource type="Texture2D" uid="uid://cy8h44ilffhw4" path="res://Textures/Entity/GEM 4 - RED - Spritesheet.png" id="2_77gyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpjb1"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(0, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5uv"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(20, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln1fm"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(40, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18iok"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(60, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjjpy"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(80, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drb0t"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(100, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehnjx"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(120, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7gm8"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(140, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gimvk"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(160, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muohf"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(180, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxsvm"]
+atlas = ExtResource("2_77gyt")
+region = Rect2(200, 0, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u56my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpjb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd5uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln1fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18iok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjjpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drb0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehnjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7gm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gimvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muohf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxsvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pkvxp"]
+radius = 0.6
+height = 1.5
+
+[node name="HealthCrystal" type="Area3D"]
+script = ExtResource("1_3dd7l")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.4, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_u56my")
+frame_progress = 0.758957
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_pkvxp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

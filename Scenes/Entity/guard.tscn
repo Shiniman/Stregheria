@@ -1,0 +1,173 @@
+[gd_scene load_steps=24 format=3 uid="uid://c3bbufw44jdes"]
+
+[ext_resource type="Texture2D" uid="uid://b314y7xilviyc" path="res://Textures/Entity/guard.png" id="1_p570l"]
+[ext_resource type="Script" uid="uid://bnl5nq8qsol3q" path="res://Scripts/Entity/guard.gd" id="1_smm0d"]
+[ext_resource type="Script" uid="uid://cslirmx27irx4" path="res://Scripts/States/state_machine.gd" id="3_cnet1"]
+[ext_resource type="Script" uid="uid://dv7gljj7qucvr" path="res://Scripts/States/Enemy States/guard_idle_state.gd" id="4_1rcvf"]
+[ext_resource type="Script" uid="uid://c6tnrswr7wigw" path="res://Scripts/States/Enemy States/guard_chase_state.gd" id="5_tyyvc"]
+[ext_resource type="Script" uid="uid://px70hg7f0df5" path="res://Scripts/States/Enemy States/guard_attack_state.gd" id="6_mibv0"]
+[ext_resource type="Script" uid="uid://b1h1j7541irsq" path="res://Scripts/States/Enemy States/guard_death_state.gd" id="7_huqfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smm0d"]
+atlas = ExtResource("1_p570l")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnet1"]
+atlas = ExtResource("1_p570l")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk1iy"]
+atlas = ExtResource("1_p570l")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmkvq"]
+atlas = ExtResource("1_p570l")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36pg4"]
+atlas = ExtResource("1_p570l")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rcvf"]
+atlas = ExtResource("1_p570l")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyyvc"]
+atlas = ExtResource("1_p570l")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mibv0"]
+atlas = ExtResource("1_p570l")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huqfy"]
+atlas = ExtResource("1_p570l")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xva2a"]
+atlas = ExtResource("1_p570l")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmm34"]
+atlas = ExtResource("1_p570l")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg3a"]
+atlas = ExtResource("1_p570l")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpysg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smm0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnet1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk1iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmkvq")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36pg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rcvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyyvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mibv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huqfy")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xva2a")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmm34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg3a")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lvylo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1rcvf"]
+top_radius = 0.01
+bottom_radius = 1.0
+height = 1.313
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyyvc"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.0823529)
+
+[node name="Guard" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_smm0d")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.3, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_dpysg")
+animation = &"dead"
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_lvylo")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 1, -20)
+
+[node name="StateMachineManager" type="Node" parent="."]
+script = ExtResource("3_cnet1")
+
+[node name="Idle" type="Node" parent="StateMachineManager"]
+script = ExtResource("4_1rcvf")
+
+[node name="Chase" type="Node" parent="StateMachineManager"]
+script = ExtResource("5_tyyvc")
+
+[node name="Attack" type="Node" parent="StateMachineManager"]
+script = ExtResource("6_mibv0")
+
+[node name="Death" type="Node" parent="StateMachineManager"]
+script = ExtResource("7_huqfy")
+
+[node name="View Length" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -10)
+visible = false
+mesh = SubResource("CylinderMesh_1rcvf")
+surface_material_override/0 = SubResource("StandardMaterial3D_tyyvc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -1.29808)
+mesh = SubResource("CylinderMesh_1rcvf")
+surface_material_override/0 = SubResource("StandardMaterial3D_tyyvc")

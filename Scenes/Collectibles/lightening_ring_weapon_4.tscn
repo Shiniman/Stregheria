@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dslot60inlft2"]
+
+[ext_resource type="Texture2D" uid="uid://didu8jmgc0lyx" path="res://Textures/UI/LighteningRingIcon.png" id="1_13o3g"]
+[ext_resource type="Script" uid="uid://beubb0qgrn60a" path="res://Scripts/Collectibles/lightening_ring.gd" id="1_fgm23"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgm23"]
+radius = 1.4
+height = 3.0
+
+[node name="LighteningRingWeapon4" type="Area3D"]
+script = ExtResource("1_fgm23")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.7, 0)
+billboard = 2
+texture = ExtResource("1_13o3g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.641, 0)
+shape = SubResource("CapsuleShape3D_fgm23")

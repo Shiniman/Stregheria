@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3exursnsdkwa"]
+
+[ext_resource type="Texture2D" uid="uid://buakcujv40p6u" path="res://Textures/Menu/Main Menu - Blurred.png" id="1_6civs"]
+[ext_resource type="Script" uid="uid://c2bx8krk7g6jv" path="res://Scripts/instructions.gd" id="1_u3m5j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3m5j"]
+texture = ExtResource("1_6civs")
+modulate_color = Color(0.41598, 0.41598, 0.41598, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6civs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6civs"]
+bg_color = Color(0.674815, 0.674815, 0.674815, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3m5j"]
+bg_color = Color(0.501407, 0.501406, 0.501406, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfy7y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 6
+shadow_offset = Vector2(0, 3.335)
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3m5j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u3m5j")
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.5
+offset_right = 144.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Instructions"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -250.0
+offset_right = 173.5
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Key" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Key
+w
+a
+s
+d
+spacebar
+shift
+esc
+lmb
+1
+2
+3
+4"
+
+[node name="Action" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Action
+forward
+left
+backward
+right
+jump
+run
+show cursor
+shoot
+weapon 1
+weapon 2
+weapon 3
+weapon 4"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -85.0
+offset_right = 78.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6civs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6civs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u3m5j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfy7y")
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_main_menu_pressed"]

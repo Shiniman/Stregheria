@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://eli1vjeded0l"]
+
+[ext_resource type="Texture2D" uid="uid://c3mt8ihrjo6te" path="res://Textures/UI/FireRingIcon.png" id="1_6tdi6"]
+[ext_resource type="Script" uid="uid://dtq850s1agu3m" path="res://Scripts/Collectibles/fire_ring.gd" id="1_lp1u6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lp1u6"]
+radius = 1.4
+height = 3.0
+
+[node name="FireRingWeapon2" type="Area3D"]
+script = ExtResource("1_lp1u6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.7, 0)
+billboard = 2
+texture = ExtResource("1_6tdi6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.641268, 0)
+shape = SubResource("CapsuleShape3D_lp1u6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
